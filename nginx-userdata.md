@@ -2,7 +2,7 @@
 yum install -y nginx
 systemctl start nginx
 systemctl enable nginx
-git clone https://github.com/Chuks/Vic-project-config.git
+git clone https://github.com/Chuks-project/Vic-project-config.git
 mv /Vic-project-config/reverse.conf /etc/nginx/
 mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf-distro
 cd /etc/nginx/
