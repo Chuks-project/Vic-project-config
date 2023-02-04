@@ -1,6 +1,6 @@
 #!/bin/bash
 mkdir /var/www/
-sudo mount -t efs -o tls,accesspoint=fsap-004e9e3ed5941bf5c fs-0fda81dd82099c285:/ /var/www/
+sudo mount -t efs -o tls,accesspoint=fsap-0a298859d5d5fc9ac fs-017fdccebb160eb94:/ /var/www/
 yum install -y httpd 
 systemctl start httpd
 systemctl enable httpd
@@ -17,9 +17,9 @@ mkdir /var/www/html/
 cp -R /wordpress/* /var/www/html/
 cd /var/www/html/
 touch healthstatus
-sed -i "s/localhost/vic-database.crlnswkkjx3m.us-east-1.rds.amazonaws.com/g" wp-config.php 
-sed -i "s/username_here/Vicadmin/g" wp-config.php 
-sed -i "s/password_here/Vic12345/g" wp-config.php 
+sed -i "s/localhost/vic-database.cgtcuv9uf0id.eu-west-1.rds.amazonaws.com/g" wp-config.php 
+sed -i "s/username_here/vicadmin/g" wp-config.php 
+sed -i "s/password_here/vic12345/g" wp-config.php 
 sed -i "s/database_name_here/wordpressdb/g" wp-config.php 
 chcon -t httpd_sys_rw_content_t /var/www/html/ -R
 systemctl restart httpd
